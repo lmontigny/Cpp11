@@ -11,6 +11,7 @@ public:
 	}
 };
 
+// Define a spacial template for the char type
 template<>
 class Spunky<char> {
 public:
