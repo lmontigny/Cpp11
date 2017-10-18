@@ -47,10 +47,22 @@ int main()
 {
 	boVector reusable = createBoVector();
 	foo(reusable);
-	
 
 	foo(createBoVector()); // rvalue, no need to make a copy of tmp and passing it to foo
 	foo(std::move(reusable)); // call the move constructor, reusable is after destoryed!!
-    return 0;
+	
+	// Other example
+	// Rvalue, move
+	vector<MemoryPage> vm;
+	vm.push_back(MemoryPage(1024));
+	vm.push_back(MemoryPage(2048));
+	// Lvalue, copy
+	vector<MemoryPage> vm;
+	MemoryPage mp1(1024);
+	vm.push_back(mp1); 
+	vm.push_back(std::move(mp)); // calls push_back(T&&), force usage of move
+
+
+   	return 0;
 }
 
