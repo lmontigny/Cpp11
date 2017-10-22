@@ -67,7 +67,12 @@ struct {
 } SoA;
 
 /*
-If you are going to be accessing the R/G/B components of each pixel concurrently then AoS usually makes sense, since the successive reads of R, G, B components will be contiguous and usually contained within the same cache line. For CUDA this also means memory read/write coalescing.
+If you are going to be accessing the R/G/B components of each pixel
+concurrently then AoS usually makes sense, since the successive reads 
+of R, G, B components will be contiguous and usually contained within
+the same cache line. For CUDA this also means memory read/write coalescing.
 
-However if you are going to process color planes separately then SoA might be preferred, e.g. if you want to scale all R values by some scale factor, then SoA means that all R components will be contiguous.
+However if you are going to process color planes separately then SoA might 
+be preferred, e.g. if you want to scale all R values by some scale factor, 
+then SoA means that all R components will be contiguous.
 */
