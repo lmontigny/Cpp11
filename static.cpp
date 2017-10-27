@@ -16,7 +16,7 @@ int Something::s_idGenerator = 1; // start our ID generator with value 1
  
 int main()
 {
-    Something first;
+    Something first;   // Something is an object, first is an instance, static = 1 instance accross all instances
     Something second;
     Something third;
  
