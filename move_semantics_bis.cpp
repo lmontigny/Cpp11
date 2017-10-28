@@ -20,6 +20,13 @@ value, does not require a copy
 
 Copy constructor = deep copy (expensive)
 Move constructor = shallow copy
+
+std::move = cast its argument to an rvalue
+std::forward = perfom this cast under condition
+
+First, don’t declare objects
+const if you want to be able to move from them. Move requests on const objects are
+silently transformed into copy operations.
 */
 
 class boVector {
